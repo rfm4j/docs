@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Focus Room</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            text-align: center;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            background: linear-gradient(180deg, #FFFFFF 0%, #B0B0B0 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .error-message {
+            font-size: 1.5rem;
+            color: var(--secondary-text);
+            margin: 20px 0 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container error-container animate">
+        <h1 class="error-code">404</h1>
+        <p class="error-message">Lost in the void? Let's get you back to focus.</p>
+        <a href="/" class="button">Return Home</a>
+    </div>
+
+</body>
+
+</html>

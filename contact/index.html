@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support - Focus Room</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="../" style="text-decoration: none;">
+            <h1>Focus Room</h1>
+        </a>
+        <p class="subtitle">Contact Support</p>
+    </header>
+
+    <div class="contact-container">
+
+        <!-- 
+           IMPORTANT: To make this form work, you need a free Formspree account.
+           1. Go to https://formspree.io/
+           2. Create a "New Form"
+           3. Copy the URL they give you (e.g., https://formspree.io/f/xyz...)
+           4. Paste it inside the action="" attribute below.
+        -->
+        <form id="contact-form" action="https://formspree.io/f/xdkqlnlo" method="POST">
+
+            <label for="email">Your Email</label>
+            <input type="email" name="email" id="email" placeholder="name@example.com" required>
+
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" id="subject" placeholder="Bug report, feedback, etc." required>
+
+            <label for="message">Message</label>
+            <textarea name="message" id="message" placeholder="How can we help you?" required></textarea>
+
+            <button type="submit" class="button" style="width: 100%; margin-top: 10px;">Send Message</button>
+        </form>
+
+        <div id="status"
+            style="display: none; text-align: center; margin-top: 20px; padding: 20px; background: rgba(138, 92, 255, 0.1); border-radius: 10px; border: 1px solid var(--accent-color);">
+            <h3 style="margin: 0; color: var(--accent-color);">Message Sent!</h3>
+            <p style="margin: 10px 0 0;">Thank you for reaching out. We'll get back to you shortly.</p>
+        </div>
+
+        <p style="text-align: center; margin-top: 30px; color: var(--secondary-text);">
+            We usually respond within 24-48 hours.
+        </p>
+
+    </div>
+
+    <script>
+        var contactForm = document.getElementById("contact-form");
+        var formStatus = document.getElementById("status");
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            var form = event.target; // Get form reference directly from event
+            var data = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.style.display = "none";
+                    formStatus.style.display = "block";
+                    form.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert(data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert("Server Error: " + response.status + " - Oops! There was a problem submitting your form");
+                        }
+                    })
+                }
+            }).catch(error => {
+                alert("Error: " + error.message);
+            });
+        }
+        if (contactForm) {
+            contactForm.addEventListener("submit", handleSubmit);
+        }
+    </script>
+
+    <footer>
+        <a href="../">Home</a> | <a href="../privacy/">Privacy Policy</a> | <a href="./"
+            style="color: var(--accent-color);">Support</a>
+    </footer>
+
+</body>
+
+</html>
