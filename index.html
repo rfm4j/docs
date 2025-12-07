@@ -11,43 +11,77 @@
 
 <body>
 
-    <header>
-        <h1>Focus Room</h1>
-        <p class="subtitle">Study, Work & Flow with Style.</p>
-        <a href="#" class="button">Download on App Store</a>
+    <header class="container">
+        <div class="hero-grid">
+            <div class="hero-text animate">
+                <div style="margin-bottom: 20px;">
+                    <span
+                        style="background: rgba(110, 86, 207, 0.2); color: #9D84FF; padding: 6px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Now
+                        Available on iOS</span>
+                </div>
+                <h1>Focus Room</h1>
+                <p class="subtitle">Design your perfect environment for deep work. <br>Aesthetic timers, immersive
+                    backgrounds, and zero distractions.</p>
+                <a href="#" class="button">Download on App Store</a>
+            </div>
+
+            <div class="hero-image animate delay-200">
+                <!-- CSS-only iPhone Mockup Placeholder -->
+                <div class="device-mockup">
+                    <div class="device-screen">
+                        <!-- Ideally replace this img src with a real screenshot -->
+                        <img src="favicon.png" style="width: 80px; height: 80px; margin-bottom: 20px; opacity: 0.8;">
+                        <span style="font-weight: 600; color: #fff; margin-bottom: 10px;">Focus Room</span>
+                        <p>App Screenshot Goes Here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <section class="features">
-        <div class="feature-card">
-            <h3>Custom Rooms</h3>
-            <p>Create visual spaces for every task. From deep work to meditation, customize specific timers and themes
-                for each "room" of your life.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Immersive Backgrounds</h3>
-            <p>Replace your environment with stunning animated backgrounds. Rainy windows, snowy forests, or neon
-                cities—set the perfect mood.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Privacy First</h3>
-            <p>100% offline and secure. No accounts, no cloud, no tracking. Your focus data stays on your device, where
-                it belongs.</p>
-        </div>
-    </section>
+    <main class="container">
+        <section class="features">
+            <div class="feature-card animate delay-100">
+                <span style="font-size: 2rem; margin-bottom: 15px; display: block;">🎨</span>
+                <h3>Custom Rooms</h3>
+                <p>Create visual spaces for every task. From deep work to meditation, customize specific timers and
+                    themes.</p>
+            </div>
+            <div class="feature-card animate delay-200">
+                <span style="font-size: 2rem; margin-bottom: 15px; display: block;">🌧</span>
+                <h3>Immersive Backgrounds</h3>
+                <p>Replace your environment with stunning animated backgrounds. Rainy windows, snowy forests, or neon
+                    cities.</p>
+            </div>
+            <div class="feature-card animate delay-300">
+                <span style="font-size: 2rem; margin-bottom: 15px; display: block;">🔒</span>
+                <h3>Privacy First</h3>
+                <p>100% offline and secure. No accounts, no cloud. Your focus data stays on your device.</p>
+            </div>
+        </section>
 
-    <div class="cta">
-        <p>Ready to transform your productivity?</p>
-        <br>
-        <a href="#" class="button">Get Focus Room</a>
-        <br><br>
-        <span style="color: var(--secondary-text); font-size: 0.9rem;">Need help? <a href="contact.html"
-                style="color: var(--accent-color); text-decoration: none;">Contact Support</a></span>
-    </div>
+        <div class="cta animate delay-300">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready to flow?</h2>
+            <p style="color: var(--secondary-text); margin-bottom: 40px;">Join thousands of users improving their focus
+                today.</p>
+            <a href="#" class="button">Get Focus Room</a>
+            <br><br>
+            <div style="margin-top: 30px;">
+                <span style="color: var(--secondary-text); font-size: 0.9rem;">Need help? <a href="contact.html"
+                        style="color: white; text-decoration: underline;">Contact Support</a></span>
+            </div>
+        </div>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Focus Room. All rights reserved.</p>
-        <br>
-        <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Support</a>
+        <div class="container">
+            <p>&copy; 2025 Focus Room. All rights reserved.</p>
+            <div style="margin-top: 20px;">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="contact.html">Support</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
     </footer>
 
 </body>
