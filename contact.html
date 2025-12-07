@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support - Focus Room</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" style="text-decoration: none;">
+            <h1>Focus Room</h1>
+        </a>
+        <p class="subtitle">Contact Support</p>
+    </header>
+
+    <div class="contact-container">
+
+        <!-- 
+           IMPORTANT: To make this form work, you need a free Formspree account.
+           1. Go to https://formspree.io/
+           2. Create a "New Form"
+           3. Copy the URL they give you (e.g., https://formspree.io/f/xyz...)
+           4. Paste it inside the action="" attribute below.
+        -->
+        <form action="https://formspree.io/f/xdkqlnlo" method="POST">
+
+            <label for="email">Your Email</label>
+            <input type="email" name="email" id="email" placeholder="name@example.com" required>
+
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" id="subject" placeholder="Bug report, feedback, etc." required>
+
+            <label for="message">Message</label>
+            <textarea name="message" id="message" placeholder="How can we help you?" required></textarea>
+
+            <button type="submit" class="button" style="width: 100%; margin-top: 10px;">Send Message</button>
+        </form>
+
+        <p style="text-align: center; margin-top: 30px; color: var(--secondary-text);">
+            We usually respond within 24-48 hours.
+        </p>
+
+    </div>
+
+    <footer>
+        <a href="index.html">Home</a> | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html"
+            style="color: var(--accent-color);">Support</a>
+    </footer>
+
+</body>
+
+</html>
