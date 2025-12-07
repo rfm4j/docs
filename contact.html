@@ -76,12 +76,12 @@
                         if (Object.hasOwn(data, 'errors')) {
                             alert(data["errors"].map(error => error["message"]).join(", "));
                         } else {
-                            alert("Oops! There was a problem submitting your form");
+                            alert("Server Error: " + response.status + " - Oops! There was a problem submitting your form");
                         }
                     })
                 }
             }).catch(error => {
-                alert("Oops! There was a problem submitting your form");
+                alert("Network Error: " + error.message + ". Are you testing from file://? Please use the live GitHub URL.");
             });
         }
         form.addEventListener("submit", handleSubmit)
