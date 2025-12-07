@@ -26,7 +26,7 @@
            3. Copy the URL they give you (e.g., https://formspree.io/f/xyz...)
            4. Paste it inside the action="" attribute below.
         -->
-        <form action="https://formspree.io/f/xdkqlnlo" method="POST">
+        <form id="contact-form" action="https://formspree.io/f/xdkqlnlo" method="POST">
 
             <label for="email">Your Email</label>
             <input type="email" name="email" id="email" placeholder="name@example.com" required>
@@ -40,11 +40,51 @@
             <button type="submit" class="button" style="width: 100%; margin-top: 10px;">Send Message</button>
         </form>
 
+        <div id="status"
+            style="display: none; text-align: center; margin-top: 20px; padding: 20px; background: rgba(138, 92, 255, 0.1); border-radius: 10px; border: 1px solid var(--accent-color);">
+            <h3 style="margin: 0; color: var(--accent-color);">Message Sent!</h3>
+            <p style="margin: 10px 0 0;">Thank you for reaching out. We'll get back to you shortly.</p>
+        </div>
+
         <p style="text-align: center; margin-top: 30px; color: var(--secondary-text);">
             We usually respond within 24-48 hours.
         </p>
 
     </div>
+
+    <script>
+        var form = document.getElementById("contact-form");
+        var status = document.getElementById("status");
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            var data = new FormData(event.target);
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.style.display = "none";
+                    status.style.display = "block";
+                    form.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert(data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert("Oops! There was a problem submitting your form");
+                        }
+                    })
+                }
+            }).catch(error => {
+                alert("Oops! There was a problem submitting your form");
+            });
+        }
+        form.addEventListener("submit", handleSubmit)
+    </script>
 
     <footer>
         <a href="index.html">Home</a> | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html"
